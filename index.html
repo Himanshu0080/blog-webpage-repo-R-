@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+
+        }
+        a{
+            text-decoration: none;
+        }
+        .container {
+            max-width: 75vw;
+            padding: 2rem;
+            margin: auto;
+            /* background-color: aqua; */
+        }
+        .header_container{
+            margin-bottom:2.5rem ;
+        }
+        .header_title{
+            color: grey;
+            margin-bottom: 1rem;
+            line-height: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .header_disc{
+            max-width: 560px;
+            text-align: center;
+            color: rgb(212, 170, 170);
+            margin: 0 auto;
+        }
+        .main_container{
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(4,1fr);
+            /* LINE- 50&51 EK SATH KHOLNI PDAIGE AUR L-48 KO COMMENT KAR DO */
+            /* grid-template-columns: repeat(auto-fit, minmax(350px,400px));
+            justify-content: center; */
+        }
+        /* MEDIA QUEARY AGR CHAIY TO LGA LENA EKDUM SET LAGI HAI */
+        /* @media(max-width:930px){
+            .main_container{
+            grid-template-columns: repeat(1,1fr);
+            }
+
+        }
+
+        @media(min-width:935px){
+            .main_container{
+            grid-template-columns: repeat(2,1fr);
+            }
+
+        }
+        @media(min-width:1380px){
+            .main_container{
+            grid-template-columns: repeat(3,1fr);
+            }
+
+        }
+        @media(min-width:1600px){
+            .main_container{
+            grid-template-columns: repeat(4,1fr);
+            }
+
+        } */
+        .card_container{
+            display: flex;
+            flex-direction: column;
+            border: 2px solid black;
+            border-radius: 8px;
+            overflow: hidden;
+            
+
+        }
+        .card_image_container{
+            position: relative;
+            overflow: hidden;
+            height: 14rem;
+
+        }
+        .card_image{
+            object-fit: cover;
+            object-position:center;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+        .card_title_container{
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+
+        }
+        .card_container:hover .card_image{
+            transform: scale(1.1);
+            transition-duration: 200ms;
+        }
+        .card_title{
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgb(72, 70, 70);
+            line-height: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .card_title_anchor:hover .card_title{
+            color: blue;
+            
+        }
+        .card_desc{
+            color:rgb(60, 59, 59) ;
+            font-size: 1rem;
+        }
+        .card_footer_container{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0,1.5rem;
+            padding-bottom:1.5rem ;
+        }
+        .author_container{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .author_avtar_container{
+            height: 2.5rem;
+            width: 2.5rem;
+            overflow: hidden;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: rgb(171, 171, 171);
+        }
+        .author_info_container{
+            display: flex;
+            flex-direction: column;
+        }
+        /* .author_info_container:nth-child(1){
+            color: rgb(73, 73, 237);
+        }
+        .author_info_container:nth-child(2){
+            color: grey;
+        } */
+        .auther_name{
+            color: rgb(86, 86, 192);
+
+        }
+        .auther_date{
+        color: grey;
+        }
+        .card_tag_container{
+            font-size: 0.79rem;
+            border: 1px solid rgb(100, 97, 97);
+            border-radius: 5px;
+            line-height: 1.3rem;
+            padding: 0.25rem, 0.5rem;
+            margin-bottom: 1.5rem;
+
+        }
+
+    </style>
+</head>
+
+<body class="body_container">
+    <div class="container">
+        <header class="header_container">
+            <h1 class="header_title">Codehelp Blogs</h1>
+            <p class="header_disc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, explicabo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis, eum!</p>
+        </header>
+        <main class="main_container">
+            <!-- card1 start-->
+            <div class="card_container">
+                <a class="card_image_container" href="#">
+                    <img class="card_image" loading="lazy" src="https://source.unsplash.com/random/600×400?healthy " alt="card1_image">
+                </a>
+                <div class="card_title_container">
+                    <a class="card_title_anchor" href="#"><h2 class="card_title">New Gaget Released</h2></a>
+                    <p class="card_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, labore!</p>
+
+                </div>
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avtar_container">
+                            <img class="author_avtar" loading="lazy" src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="avtar1">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="auther_name">Jhon Deo</span>
+                            <span class="auther_date">Sep 19, 2021</span>
+                        </div>
+                    </div>
+                    <div class="card_tag_container">
+                        <span>Techlonogy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card1 end -->
+            <!-- card2 -->
+            <div class="card_container">
+                <a class="card_image_container" href="#">
+                    <img class="card_image" loading="lazy" src="https://source.unsplash.com/random/600×400?nutrition " alt="card1_image">
+                </a>
+                <div class="card_title_container">
+                    <a class="card_title_anchor" href="#"><h2 class="card_title">New Gaget Released</h2></a>
+                    <p class="card_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                </div>
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avtar_container">
+                            <img class="author_avtar" loading="lazy" src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="avtar1">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="auther_name">Jhon Deo</span>
+                            <span class="auther_date">Sep 19, 2021</span>
+                        </div>
+                    </div>
+                    <div class="card_tag_container">
+                        <span>Techlonogy</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card3 -->
+            <div class="card_container">
+                <a class="card_image_container" href="#">
+                    <img class="card_image" loading="lazy" src="https://source.unsplash.com/random/600×400?productivity " alt="card1_image">
+                </a>
+                <div class="card_title_container">
+                    <a class="card_title_anchor" href="#"><h2 class="card_title">New Gaget Released</h2></a>
+                    <p class="card_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, labore!</p>
+
+                </div>
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avtar_container">
+                            <img class="author_avtar" loading="lazy" src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="avtar1">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="auther_name">Jhon Deo</span>
+                            <span class="auther_date">Sep 19, 2021</span>
+                        </div>
+                    </div>
+                    <div class="card_tag_container">
+                        <span>Techlonogy</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card4 -->
+            <div class="card_container">
+                <a class="card_image_container" href="#">
+                    <img class="card_image" loading="lazy" src="https://source.unsplash.com/random/600×400?happyness " alt="card1_image">
+                </a>
+                <div class="card_title_container">
+                    <a class="card_title_anchor" href="#"><h2 class="card_title">New Gaget Released</h2></a>
+                    <p class="card_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, labore!</p>
+
+                </div>
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avtar_container">
+                            <img class="author_avtar" loading="lazy" src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="avtar1">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="auther_name">Jhon Deo</span>
+                            <span class="auther_date">Sep 19, 2021</span>
+                        </div>
+                    </div>
+                    <div class="card_tag_container">
+                        <span>Techlonogy</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card5 -->
+            <div class="card_container">
+                <a class="card_image_container" href="#">
+                    <img class="card_image" loading="lazy" src="https://source.unsplash.com/random/600×400?technology " alt="card1_image">
+                </a>
+                <div class="card_title_container">
+                    <a class="card_title_anchor" href="#"><h2 class="card_title">New Gaget Released</h2></a>
+                    <p class="card_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, labore!</p>
+
+                </div>
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avtar_container">
+                            <img class="author_avtar" loading="lazy" src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="avtar1">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="auther_name">Jhon Deo</span>
+                            <span class="auther_date">Sep 19, 2021</span>
+                        </div>
+                    </div>
+                    <div class="card_tag_container">
+                        <span>Techlonogy</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card6 -->
+            <div class="card_container">
+                <a class="card_image_container" href="#">
+                    <img class="card_image" loading="lazy" src="https://source.unsplash.com/random/600×400?flower " alt="card1_image">
+                </a>
+                <div class="card_title_container">
+                    <a class="card_title_anchor" href="#"><h2 class="card_title">New Gaget Released</h2></a>
+                    <p class="card_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, labore!</p>
+
+                </div>
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avtar_container">
+                            <img class="author_avtar" loading="lazy" src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="avtar1">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="auther_name">Jhon Deo</span>
+                            <span class="auther_date">Sep 19, 2021</span>
+                        </div>
+                    </div>
+                    <div class="card_tag_container">
+                        <span>Techlonogy</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card7 -->
+            <div class="card_container">
+                <a class="card_image_container" href="#">
+                    <img class="card_image" loading="lazy" src="https://source.unsplash.com/random/600×400?fruits " alt="card1_image">
+                </a>
+                <div class="card_title_container">
+                    <a class="card_title_anchor" href="#"><h2 class="card_title">New Gaget Released</h2></a>
+                    <p class="card_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, labore!</p>
+
+                </div>
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avtar_container">
+                            <img class="author_avtar" loading="lazy" src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="avtar1">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="auther_name">Jhon Deo</span>
+                            <span class="auther_date">Sep 19, 2021</span>
+                        </div>
+                    </div>
+                    <div class="card_tag_container">
+                        <span>Techlonogy</span>
+                    </div>
+                </div>
+            </div>
+            <!-- card8 -->
+            <div class="card_container">
+                <a class="card_image_container" href="#">
+                    <img class="card_image" loading="lazy" src="https://source.unsplash.com/random/600×400?vegetable " alt="card1_image">
+                </a>
+                <div class="card_title_container">
+                    <a class="card_title_anchor" href="#"><h2 class="card_title">New Gaget Released</h2></a>
+                    <p class="card_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, labore!</p>
+
+                </div>
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avtar_container">
+                            <img class="author_avtar" loading="lazy" src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="avtar1">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="auther_name">Jhon Deo</span>
+                            <span class="auther_date">Sep 19, 2021</span>
+                        </div>
+                    </div>
+                    <div class="card_tag_container">
+                        <span>Techlonogy</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
+
+
+https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64
+https://source.unsplash.com/random/600×400?healthy
